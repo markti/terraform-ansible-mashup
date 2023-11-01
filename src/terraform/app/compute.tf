@@ -1,4 +1,4 @@
-module "primary" {
+module "primary_cluster" {
 
   source = "../modules/cluster"
 

@@ -1,4 +1,4 @@
-module "primary" {
+module "keyvault" {
 
   source = "../modules/keyvault"
 
