@@ -1,7 +1,7 @@
 
 module "azure_regions" {
   # This cannot be dynamic as it is special
-  source   = "../modules/azure-regions"
+  source   = "../azure-regions"
   location = azurerm_resource_group.main.location
 }
 
