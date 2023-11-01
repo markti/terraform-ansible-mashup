@@ -2,7 +2,7 @@
 module "azure_regions" {
   # This cannot be dynamic as it is special
   source   = "../azure-regions"
-  location = azurerm_resource_group.main.location
+  location = var.location
 }
 
 resource "azurerm_orchestrated_virtual_machine_scale_set" "main" {
