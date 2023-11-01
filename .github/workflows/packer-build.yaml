@@ -1,4 +1,4 @@
-name: Docker-WebApp
+name: Packer-Builder
 
 on:
   workflow_dispatch:
@@ -49,7 +49,7 @@ jobs:
           -backend-config="container_name=${{ vars.BACKEND_STORAGE_CONTAINER_NAME }}" \
           -backend-config="key=${{ vars.APPLICATION_NAME }}-${{ vars.ENVIRONMENT_NAME }}"
 
-        terraform apply -refresh-only
+        terraform apply -auto-approve
 
         registry_endpoint=$(terraform output -raw registry_endpoint)
         echo $registry_endpoint

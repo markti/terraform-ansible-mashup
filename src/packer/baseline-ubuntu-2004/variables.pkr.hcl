@@ -1,34 +1,34 @@
-variable subscription_id {
+variable "subscription_id" {
   type = string
 }
-variable tenant_id {
+variable "tenant_id" {
   type = string
 }
-variable client_id {
+variable "client_id" {
   type = string
 }
-variable client_secret {
+variable "client_secret" {
   sensitive = true
   type      = string
 }
-variable location {
+variable "location" {
   type = string
 }
-variable image_name {
+variable "image_name" {
   type = string
 }
-variable image_version {
+variable "image_version" {
   type = string
 }
-variable gallery_name {
+variable "gallery_name" {
   type = string
 }
-variable gallery_resource_group {
+variable "gallery_resource_group" {
   type = string
 }
-variable agent_ipaddress {
+variable "agent_ipaddress" {
   type = string
 }
-variable vm_size {
+variable "vm_size" {
   type = string
 }
