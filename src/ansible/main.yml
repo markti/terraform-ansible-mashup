@@ -1,0 +1,9 @@
+# main.yml
+
+- hosts: cluster
+  gather_facts: true
+  vars_files:
+    - "vars.yml"
+  roles:
+    - roles/common
+    

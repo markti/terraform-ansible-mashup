@@ -29,3 +29,14 @@ resource "azurerm_subnet" "gateway" {
   address_prefixes = [cidrsubnet(var.vnet_address_space, 2, 2)]
 
 }
+
+resource "azurerm_subnet" "cluster" {
+
+  name = "snet-cluster"
+
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+
+  address_prefixes = [cidrsubnet(var.vnet_address_space, 2, 3)]
+
+}

@@ -1,0 +1,25 @@
+## run every time so we have logs on vms
+- name: Copy Who-What-When and localbin
+  become: true
+  ansible.builtin.copy:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0755'
+  loop:
+    - { src: "files/when-who-what.txt", dest: "/tmp/when-who-what.txt" }
+
+## Common setup things go here.
+- name: Install profile into /etc/profile
+  become: true
+  ansible.builtin.template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+  loop:
+    - { src: "templates/etc/profile.j2", dest: "/etc/profile" }
+
+- include: maintenance.yml

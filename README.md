@@ -12,3 +12,4 @@
 
 `terraform appply`
 
+`ansible % ansible-playbook -i inventory.yml main.yml --extra-vars "@vars.yml" -b`

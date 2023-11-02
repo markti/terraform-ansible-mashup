@@ -25,9 +25,9 @@ resource "azurerm_linux_virtual_machine" "main" {
 
   os_disk {
     name                 = "${local.clean_hostname}-osdisk"
-    caching              = var.os_disk_caching
+    caching              = var.os_disk.caching
     storage_account_type = var.storage_account_type
-    disk_size_gb         = var.os_disk_size
+    disk_size_gb         = var.os_disk.size
   }
 
   identity {
@@ -37,9 +37,5 @@ resource "azurerm_linux_virtual_machine" "main" {
 
   boot_diagnostics {
     storage_account_uri = var.boot_diagnostics_storage_uri
-  }
-
-  lifecycle {
-    ignore_changes = [identity[0].identity_ids, identity]
   }
 }

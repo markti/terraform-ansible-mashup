@@ -2,3 +2,9 @@
 **/.terraform*
 **/.debug.sh
 **/.debug.pkrvars.hcl
+**/*.pem
+**/*.pub
+src/terraform/app/vars.yml
+src/terraform/app/inventory.yml
+src/ansible/vars.yml
+src/ansible/inventory.yml
